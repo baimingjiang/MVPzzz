@@ -2,7 +2,7 @@ package com.zzz.mvpzzz.presenter;
 
 import com.zzz.mvp.base.BasePresenter;
 import com.zzz.mvp.inject.InjectModel;
-import com.zzz.mvpzzz.contract.ILoginContract;
+import com.zzz.mvpzzz.contract.LoginContract;
 import com.zzz.mvpzzz.model.UserModel;
 import com.zzz.mvpzzz.pojo.User;
 
@@ -14,8 +14,7 @@ import io.reactivex.functions.Consumer;
  * @Description
  */
 
-public class LoginPresenter extends BasePresenter<ILoginContract.ILoginView> implements ILoginContract.ILoginPresenter {
-    private static final String TAG = "zzz";
+public class LoginPresenter extends BasePresenter<LoginContract.ILoginView> implements LoginContract.ILoginPresenter {
     @InjectModel
     private UserModel userModel;
 

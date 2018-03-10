@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.zzz.mvp.base.BaseMvpActivity;
 import com.zzz.mvp.inject.InjectPresenter;
 import com.zzz.mvpzzz.R;
-import com.zzz.mvpzzz.contract.ILoginContract;
+import com.zzz.mvpzzz.contract.LoginContract;
 import com.zzz.mvpzzz.pojo.User;
 import com.zzz.mvpzzz.presenter.LoginPresenter;
 
@@ -19,15 +19,13 @@ import com.zzz.mvpzzz.presenter.LoginPresenter;
  * @Description
  */
 
-public class LoginActivity extends BaseMvpActivity implements ILoginContract.ILoginView {
+public class LoginActivity extends BaseMvpActivity implements LoginContract.ILoginView {
     private Button btnLogin;
     private EditText etAccount;
     private EditText etPassword;
 
     @InjectPresenter
     private LoginPresenter loginPresenter;
-
-    private EditText test;
 
     @Override
     protected int setContentView() {

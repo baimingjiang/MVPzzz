@@ -11,10 +11,8 @@ import io.reactivex.Observable;
  * @Description
  */
 
-public class UserModel extends BaseModel implements IUserModel {
-    @Override
+public class UserModel extends BaseModel {
     public Observable<String> toLogin(User user) {
-
         //Retrofit2
         String result = "fail";
         if ("zzz".equals(user.getAccount()) && "123".equals(user.getPassword())) {

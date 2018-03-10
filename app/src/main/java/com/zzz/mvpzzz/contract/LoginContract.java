@@ -9,14 +9,14 @@ import com.zzz.mvpzzz.pojo.User;
  * @Description
  */
 
-public interface ILoginContract {
-    interface ILoginView extends IBaseView {
+public class LoginContract {
+    public interface ILoginView extends IBaseView {
         void LoginSuccess();
 
         void loginFail(String msg);
     }
 
-    interface ILoginPresenter {
+    public interface ILoginPresenter {
         void toLogin(User user);
     }
 }

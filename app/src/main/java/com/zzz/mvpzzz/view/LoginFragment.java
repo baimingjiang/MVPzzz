@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.zzz.mvp.base.BaseMvpFragment;
 import com.zzz.mvp.inject.InjectPresenter;
 import com.zzz.mvpzzz.R;
-import com.zzz.mvpzzz.contract.ILoginContract;
+import com.zzz.mvpzzz.contract.LoginContract;
 import com.zzz.mvpzzz.pojo.User;
 import com.zzz.mvpzzz.presenter.LoginPresenter;
 
@@ -19,7 +19,7 @@ import com.zzz.mvpzzz.presenter.LoginPresenter;
  * @Description
  */
 
-public class LoginFragment extends BaseMvpFragment implements ILoginContract.ILoginView {
+public class LoginFragment extends BaseMvpFragment implements LoginContract.ILoginView {
     private EditText etAccount;
     private EditText etPassword;
     private Button btnLogin;
