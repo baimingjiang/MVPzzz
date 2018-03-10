@@ -26,8 +26,9 @@ public class LoginActivity extends BaseMvpActivity implements ILoginContract.ILo
 
     @InjectPresenter
     private LoginPresenter loginPresenter;
-    @InjectPresenter
-    private LoginPresenter loginPresenter2;
+
+    private EditText test;
+
     @Override
     protected int setContentView() {
         return R.layout.activity_login;
@@ -44,7 +45,7 @@ public class LoginActivity extends BaseMvpActivity implements ILoginContract.ILo
                 String account = etAccount.getText().toString().trim();
                 String password = etPassword.getText().toString().trim();
                 User user = new User(account, password);
-                loginPresenter2.toLogin(user);
+                loginPresenter.toLogin(user);
             }
         });
     }

@@ -1,5 +1,7 @@
 package com.zzz.mvp.base;
 
+import android.util.Log;
+
 import com.zzz.mvp.proxy.presenter.IPresenterMvpProxy;
 import com.zzz.mvp.proxy.presenter.impl.PresenterMvpProxy;
 
@@ -22,6 +24,10 @@ public class BasePresenter<V extends IBaseView> {
 
     @SuppressWarnings("unchecked")
     public void attach(V view) {
+        Class<?>[] interfaces = view.getClass().getInterfaces();
+        if (!checkView(interfaces)) {
+            throw new RuntimeException("<<<<<<<<<< " + view.getClass().getName() + "'s interfaces without \"IBaseView\" >>>>>>>>>>");
+        }
         mReferenceView = new SoftReference<>(view);
         //用于防止view界面已经销毁处理
         mProxyView = (V) Proxy.newProxyInstance(view.getClass().getClassLoader(), view.getClass().getInterfaces(),
@@ -36,6 +42,21 @@ public class BasePresenter<V extends IBaseView> {
                 });
         //
         injectModel();
+    }
+
+    /**
+     * 检查View是否有接口且继承于IBaseView
+     *
+     * @param interfaces
+     * @return
+     */
+    private boolean checkView(Class<?>[] interfaces) {
+        for (Class<?> anInterface : interfaces) {
+            if (IBaseView.class.isAssignableFrom(anInterface)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void injectModel() {

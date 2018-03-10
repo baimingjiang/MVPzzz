@@ -32,6 +32,9 @@ public class PresenterMvpProxy implements IPresenterMvpProxy {
             InjectModel annotation = declaredField.getAnnotation(InjectModel.class);
             if (null != annotation) {
                 Class<? extends BaseModel> type = (Class<? extends BaseModel>) declaredField.getType();
+                if (!BaseModel.class.isAssignableFrom(type)) {
+                    throw new RuntimeException("<<<<<<<<<< no support \"InjectModel\" type with " + type.getName() + ">>>>>>>>>>");
+                }
                 try {
                     BaseModel baseModel = type.newInstance();
                     declaredField.setAccessible(true);

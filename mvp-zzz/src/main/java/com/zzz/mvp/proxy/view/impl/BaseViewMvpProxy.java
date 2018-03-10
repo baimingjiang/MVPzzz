@@ -1,6 +1,5 @@
 package com.zzz.mvp.proxy.view.impl;
 
-import android.view.View;
 
 import com.zzz.mvp.base.BasePresenter;
 import com.zzz.mvp.base.IBaseView;
@@ -33,6 +32,9 @@ class BaseViewMvpProxy implements IBaseViewMvpProxy {
             InjectPresenter annotation = declaredField.getAnnotation(InjectPresenter.class);
             if (null != annotation) {
                 Class<? extends BasePresenter> type = (Class<? extends BasePresenter>) declaredField.getType();
+                if (!BasePresenter.class.isAssignableFrom(type)) {
+                    throw new RuntimeException("<<<<<<<<<< No support \"InjectPresenter\" type with " + type.getName() + ">>>>>>>>>>");
+                }
                 try {
                     BasePresenter basePresenter = type.newInstance();
                     declaredField.setAccessible(true);
