@@ -9,7 +9,23 @@ import com.zzz.mvp.base.IBaseView;
  */
 
 public interface ILoginView extends IBaseView {
-    void LoginSuccess();
+    /**
+     * 正在登陆
+     */
+    void showLoginLoading();
 
+    /**
+     * 结束登陆
+     */
+    void hideLoginLoading();
+
+    /**
+     * 正在登录成功
+     */
+    void loginSuccess();
+
+    /**
+     * 正在登录失败
+     */
     void loginFail(String msg);
 }

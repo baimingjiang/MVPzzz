@@ -7,7 +7,8 @@ import com.zzz.mvpzzz.sample2.pojo.User;
 import com.zzz.mvpzzz.sample2.presenter.inter.ILoginPresenter;
 import com.zzz.mvpzzz.sample2.view.inter.ILoginView;
 
-import io.reactivex.functions.Consumer;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 /**
  * @author 请叫我张懂
@@ -22,14 +23,30 @@ public class LoginPresenter extends BasePresenter<ILoginView> implements ILoginP
     @Override
     public void toLogin(User user) {
         userModel.toLogin(user)
-                .subscribe(new Consumer<String>() {
+                .subscribe(new Observer<String>() {
                     @Override
-                    public void accept(String result) throws Exception {
+                    public void onSubscribe(Disposable d) {
+                        getView().showLoginLoading();
+                    }
+
+                    @Override
+                    public void onNext(String result) {
                         if ("success".equals(result)) {
-                            getView().LoginSuccess();
+                            getView().loginSuccess();
                         } else {
                             getView().loginFail(result);
                         }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        getView().loginFail(e.toString());
+                        getView().hideLoginLoading();
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        getView().hideLoginLoading();
                     }
                 });
     }
