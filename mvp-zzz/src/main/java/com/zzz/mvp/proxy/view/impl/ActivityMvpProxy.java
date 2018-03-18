@@ -1,5 +1,6 @@
 package com.zzz.mvp.proxy.view.impl;
 
+
 import com.zzz.mvp.base.IBaseView;
 import com.zzz.mvp.proxy.view.IActivityMvpProxy;
 

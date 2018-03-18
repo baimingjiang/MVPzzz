@@ -1,7 +1,7 @@
-package com.zzz.mvpzzz.model;
+package com.zzz.mvpzzz.sample2.model;
 
 import com.zzz.mvp.base.BaseModel;
-import com.zzz.mvpzzz.pojo.User;
+import com.zzz.mvpzzz.sample2.pojo.User;
 
 import io.reactivex.Observable;
 

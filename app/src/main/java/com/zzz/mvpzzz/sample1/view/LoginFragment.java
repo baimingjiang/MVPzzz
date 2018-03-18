@@ -1,4 +1,4 @@
-package com.zzz.mvpzzz.view;
+package com.zzz.mvpzzz.sample1.view;
 
 import android.content.Intent;
 import android.view.View;
@@ -9,9 +9,9 @@ import android.widget.Toast;
 import com.zzz.mvp.base.BaseMvpFragment;
 import com.zzz.mvp.inject.InjectPresenter;
 import com.zzz.mvpzzz.R;
-import com.zzz.mvpzzz.contract.LoginContract;
-import com.zzz.mvpzzz.pojo.User;
-import com.zzz.mvpzzz.presenter.LoginPresenter;
+import com.zzz.mvpzzz.sample1.contract.LoginContract;
+import com.zzz.mvpzzz.sample1.pojo.User;
+import com.zzz.mvpzzz.sample1.presenter.LoginPresenter;
 
 /**
  * @author 请叫我张懂

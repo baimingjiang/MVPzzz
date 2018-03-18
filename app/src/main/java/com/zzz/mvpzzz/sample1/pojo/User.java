@@ -1,4 +1,4 @@
-package com.zzz.mvpzzz.pojo;
+package com.zzz.mvpzzz.sample1.pojo;
 
 /**
  * @author 请叫我张懂

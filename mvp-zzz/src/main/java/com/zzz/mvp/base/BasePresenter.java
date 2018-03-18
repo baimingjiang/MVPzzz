@@ -1,7 +1,5 @@
 package com.zzz.mvp.base;
 
-import android.util.Log;
-
 import com.zzz.mvp.proxy.presenter.IPresenterMvpProxy;
 import com.zzz.mvp.proxy.presenter.impl.PresenterMvpProxy;
 

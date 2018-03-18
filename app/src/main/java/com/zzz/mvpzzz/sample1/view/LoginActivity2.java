@@ -1,9 +1,8 @@
-package com.zzz.mvpzzz.view;
+package com.zzz.mvpzzz.sample1.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.FrameLayout;
 
 import com.zzz.mvpzzz.R;
 

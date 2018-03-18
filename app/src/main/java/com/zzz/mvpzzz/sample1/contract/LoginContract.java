@@ -1,7 +1,7 @@
-package com.zzz.mvpzzz.contract;
+package com.zzz.mvpzzz.sample1.contract;
 
 import com.zzz.mvp.base.IBaseView;
-import com.zzz.mvpzzz.pojo.User;
+import com.zzz.mvpzzz.sample1.pojo.User;
 
 /**
  * @author 请叫我张懂

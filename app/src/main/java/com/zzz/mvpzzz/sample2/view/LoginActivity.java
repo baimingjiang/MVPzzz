@@ -1,4 +1,4 @@
-package com.zzz.mvpzzz.view;
+package com.zzz.mvpzzz.sample2.view;
 
 import android.content.Intent;
 import android.view.View;
@@ -9,9 +9,9 @@ import android.widget.Toast;
 import com.zzz.mvp.base.BaseMvpActivity;
 import com.zzz.mvp.inject.InjectPresenter;
 import com.zzz.mvpzzz.R;
-import com.zzz.mvpzzz.contract.LoginContract;
-import com.zzz.mvpzzz.pojo.User;
-import com.zzz.mvpzzz.presenter.LoginPresenter;
+import com.zzz.mvpzzz.sample2.pojo.User;
+import com.zzz.mvpzzz.sample2.presenter.LoginPresenter;
+import com.zzz.mvpzzz.sample2.view.inter.ILoginView;
 
 /**
  * @author 请叫我张懂
@@ -19,7 +19,7 @@ import com.zzz.mvpzzz.presenter.LoginPresenter;
  * @Description
  */
 
-public class LoginActivity extends BaseMvpActivity implements LoginContract.ILoginView {
+public class LoginActivity extends BaseMvpActivity implements ILoginView {
     private Button btnLogin;
     private EditText etAccount;
     private EditText etPassword;

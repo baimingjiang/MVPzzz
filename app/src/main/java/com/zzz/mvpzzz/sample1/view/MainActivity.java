@@ -1,4 +1,4 @@
-package com.zzz.mvpzzz.view;
+package com.zzz.mvpzzz.sample1.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

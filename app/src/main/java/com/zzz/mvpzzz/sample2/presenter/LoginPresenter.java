@@ -1,10 +1,11 @@
-package com.zzz.mvpzzz.presenter;
+package com.zzz.mvpzzz.sample2.presenter;
 
 import com.zzz.mvp.base.BasePresenter;
 import com.zzz.mvp.inject.InjectModel;
-import com.zzz.mvpzzz.contract.LoginContract;
-import com.zzz.mvpzzz.model.UserModel;
-import com.zzz.mvpzzz.pojo.User;
+import com.zzz.mvpzzz.sample2.model.UserModel;
+import com.zzz.mvpzzz.sample2.pojo.User;
+import com.zzz.mvpzzz.sample2.presenter.inter.ILoginPresenter;
+import com.zzz.mvpzzz.sample2.view.inter.ILoginView;
 
 import io.reactivex.functions.Consumer;
 
@@ -14,7 +15,7 @@ import io.reactivex.functions.Consumer;
  * @Description
  */
 
-public class LoginPresenter extends BasePresenter<LoginContract.ILoginView> implements LoginContract.ILoginPresenter {
+public class LoginPresenter extends BasePresenter<ILoginView> implements ILoginPresenter {
     @InjectModel
     private UserModel userModel;
 
