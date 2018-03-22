@@ -1,9 +1,6 @@
 package com.zzz.mvpzzz.sample1.view;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-
+import com.zzz.mvp.base.BaseMvpActivity;
 import com.zzz.mvpzzz.R;
 
 /**
@@ -12,14 +9,22 @@ import com.zzz.mvpzzz.R;
  * @Description
  */
 
-public class LoginActivity2 extends AppCompatActivity {
+public class LoginActivity2 extends BaseMvpActivity {
     private LoginFragment loginFragment;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login2);
+    protected int setContentView() {
+        return R.layout.activity_login2;
+    }
+
+    @Override
+    protected void initView() {
         loginFragment = new LoginFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, loginFragment).commit();
+    }
+
+    @Override
+    protected void initData() {
+
     }
 }
