@@ -2,7 +2,6 @@ package com.zzz.mvp.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
 import com.zzz.mvp.proxy.view.IActivityMvpProxy;
 import com.zzz.mvp.proxy.view.impl.ActivityMvpProxy;
@@ -13,7 +12,7 @@ import com.zzz.mvp.proxy.view.impl.ActivityMvpProxy;
  * @Description
  */
 
-public abstract class BaseMvpActivity extends AppCompatActivity implements IBaseView {
+public abstract class BaseMvpActivity extends KeyboardActivity implements IBaseView {
     private IActivityMvpProxy mvpProxy;
 
     @Override
