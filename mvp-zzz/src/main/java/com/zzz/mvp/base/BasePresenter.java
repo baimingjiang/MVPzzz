@@ -1,5 +1,9 @@
 package com.zzz.mvp.base;
 
+import android.app.Activity;
+import android.content.Context;
+import android.support.v4.app.Fragment;
+
 import com.zzz.mvp.proxy.presenter.IPresenterMvpProxy;
 import com.zzz.mvp.proxy.presenter.impl.PresenterMvpProxy;
 
@@ -73,5 +77,18 @@ public class BasePresenter<V extends IBaseView> {
 
     protected V getView() {
         return mProxyView;
+    }
+
+    protected Context getContext() {
+        V tempView = mReferenceView.get();
+        if (tempView instanceof Activity) {
+            return (Activity) tempView;
+        } else if (tempView instanceof Fragment) {
+            return ((Fragment) tempView).getActivity();
+        } else if (tempView instanceof android.app.Fragment) {
+            return ((android.app.Fragment) tempView).getActivity();
+        } else {
+            return null;
+        }
     }
 }

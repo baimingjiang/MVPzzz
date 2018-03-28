@@ -19,7 +19,7 @@ public class AppContext {
         mContext = context.getApplicationContext();
     }
 
-    public Context getApplicationConext() {
+    public Context getApplicationContext() {
         if (null == mContext) {
             throw new NullPointerException("AppContext must init in Application");
         }

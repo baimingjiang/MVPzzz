@@ -24,7 +24,7 @@ public class DataModel extends BaseModel {
         return Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                AppContext.getInstance().getApplicationConext()
+                AppContext.getInstance().getApplicationContext()
                         .getSharedPreferences("UserData", Context.MODE_PRIVATE)
                         .edit()
                         .putString("account", user.getAccount())
@@ -41,7 +41,7 @@ public class DataModel extends BaseModel {
         return Observable.create(new ObservableOnSubscribe<User>() {
             @Override
             public void subscribe(ObservableEmitter<User> emitter) throws Exception {
-                SharedPreferences userData = AppContext.getInstance().getApplicationConext()
+                SharedPreferences userData = AppContext.getInstance().getApplicationContext()
                         .getSharedPreferences("UserData", Context.MODE_PRIVATE);
                 String account = userData.getString("account", "");
                 String password = userData.getString("password", "");

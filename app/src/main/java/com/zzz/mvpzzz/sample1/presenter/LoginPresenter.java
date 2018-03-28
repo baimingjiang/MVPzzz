@@ -1,5 +1,8 @@
 package com.zzz.mvpzzz.sample1.presenter;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import com.zzz.mvp.base.BasePresenter;
 import com.zzz.mvp.inject.InjectModel;
 import com.zzz.mvpzzz.sample1.contract.LoginContract;
@@ -20,6 +23,10 @@ public class LoginPresenter extends BasePresenter<LoginContract.ILoginView> impl
 
     @Override
     public void toLogin(User user) {
+        if(getContext() == null){
+            Log.i("zzzz", "toLogin: null null null");
+        }
+        Toast.makeText(getContext(),"测试",Toast.LENGTH_SHORT).show();
         userModel.toLogin(user)
                 .subscribe(new Consumer<String>() {
                     @Override
